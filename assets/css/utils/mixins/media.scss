@@ -1,0 +1,28 @@
+@mixin resDesktop {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin resTablet {
+    @media (max-width: 1199px){
+        @content;
+    }
+}
+
+@mixin resMobile {
+    @media (max-width: 767px){
+        @content;
+    }
+}
+
+@mixin resMobileXs {
+    @media (max-width: 350px){
+        @content;
+    }
+}
+@mixin resMobileS {
+    @media (max-width: 440px){
+        @content;
+    }
+}

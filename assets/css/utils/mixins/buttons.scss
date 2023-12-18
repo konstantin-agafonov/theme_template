@@ -1,0 +1,82 @@
+@mixin clearButton {
+    border: unset;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    box-shadow: none;
+    background-color: transparent;
+
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+@mixin defaultButton {
+    @include clearButton;
+    padding: 1.25rem;
+    border: 1px solid $black;
+    border-radius: 0.625rem;
+    transition: $transitionFirst;
+
+    &:hover {
+        background-color: $green;
+    }
+}
+
+@mixin checkoutButton {
+    @include clearButton;
+    padding: 1.25rem;
+    border: 1px solid $white;
+    border-radius: 0.625rem;
+    transition: $transitionFirst;
+    width: 100%;
+    justify-content: center;
+
+    &:hover {
+        background-color: $green;
+        color: $white;
+    }
+}
+
+@mixin colorButton($color) {
+    background-color: $color;
+    border: 1px solid $color;
+    color: $mostBlack;
+
+    &:hover {
+        background-color: transparent;
+        border-color: $black;
+    }
+}
+
+@mixin iconButton() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+
+    svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        display: block;
+
+        path {
+            fill: $black;
+        }
+    }
+}
+
+@mixin iconOnlyButton() {
+    padding: 0.5rem;
+
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        display: block;
+
+        path {
+            fill: $black;
+        }
+    }
+}

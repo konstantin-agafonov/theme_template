@@ -1,0 +1,112 @@
+@mixin fullWrapper {
+    @include fullWrapperDesktop;
+    @include fullWrapperMobile;
+}
+
+@mixin fullWrapperWPadding {
+    @include fullWrapperDesktopWPadding;
+    @include fullWrapperMobileWPadding;
+}
+
+@mixin fullWrapperDesktop {
+    margin-left: -$contentMarginDesktop;
+    margin-right: -$contentMarginDesktop;
+}
+
+@mixin fullWrapperDesktopWPadding {
+    margin-left: -$contentMarginDesktop;
+    margin-right: -$contentMarginDesktop;
+    padding-left: $contentMarginDesktop;
+    padding-right: $contentMarginDesktop;
+}
+
+@mixin fullWrapperMobile {
+    @include resMobile {
+        margin-left: -$contentMarginMobile;
+        margin-right: -$contentMarginMobile;
+    }
+}
+
+@mixin fullWrapperMobileWPadding {
+    @include resMobile {
+        margin-left: -$contentMarginMobile;
+        margin-right: -$contentMarginMobile;
+        padding-left: $contentMarginMobile;
+        padding-right: $contentMarginMobile;
+    }
+}
+
+@mixin mainWrapper {
+    margin-left: $contentMarginDesktop;
+    margin-right: $contentMarginDesktop;
+
+    @include resMobile {
+        margin-left: $contentMarginMobile;
+        margin-right: $contentMarginMobile;
+    }
+}
+
+@mixin halfWrapper {
+    margin-left: -5rem;
+    margin-right: -5rem;
+    @include resMobile {
+        margin-left: -$contentMarginMobile;
+        margin-right: -$contentMarginMobile;
+    }
+}
+
+@mixin cartWrapper {
+    border-radius: 1.25rem;
+    background: rgba(18, 18, 18, 0.3);
+    backdrop-filter: blur(15px);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    max-width: max-content;
+    color: $white;
+    margin-top: auto;
+    margin-left: 1.25rem;
+    margin-bottom: 1.25rem;
+
+    .cart-frame__big-text {
+        display: inline-block;
+        @include h3;
+    }
+
+    .cart-frame__default-text {
+        display: inline-block;
+        @include h4;
+    }
+
+    .cart-frame__small-text {
+        display: inline-block;
+        @include textSmall;
+    }
+
+    .cart-frame__link {
+        @include textDefault;
+        display: flex;
+        width: max-content;
+        gap: 0.625rem;
+        align-items: center;
+        svg {
+            margin-top: 0.3rem;
+        }
+
+        &:hover {
+            svg {
+                path {
+                    fill: $green;
+                }
+            }
+        }
+
+        svg {
+            path {
+                transition: $transitionFirst;
+                fill: $white;
+            }
+        }
+    }
+}

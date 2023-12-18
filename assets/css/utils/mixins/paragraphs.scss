@@ -1,0 +1,52 @@
+//56px;
+@mixin textExtraLarge {
+    font-family: "Norms", sans-serif;
+    font-size: 3.5rem;
+    line-height: 1;
+    font-weight: 600;
+}
+
+//20px
+@mixin textLarge {
+    font-family: "Norms", sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.375;
+    font-weight: 400;
+}
+
+//18px
+@mixin textBig {
+    font-family: "Norms", sans-serif;
+    font-size: 1.225rem;
+    line-height: 1.222;
+}
+
+//16px
+@mixin textDefault {
+    font-family: "Norms", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.25;
+    font-weight: 400;
+    @include resMobile {
+        font-size: 1rem;
+        line-height: 1.25rem;
+    }
+}
+
+//12px
+@mixin textSmall {
+    font-family: "Norms", sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.333;
+    font-weight: 400;
+    @include resMobile {
+        font-size: 0.75rem;
+    }
+}
+
+@mixin textTiny {
+    font-family: "Norms", sans-serif;
+    font-size: .7rem;
+    line-height: 1.2;
+    font-weight: 400;
+}

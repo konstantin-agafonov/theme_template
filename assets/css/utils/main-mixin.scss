@@ -1,0 +1,48 @@
+@import './mixins/media';
+@import './mixins/vars';
+@import './mixins/wrappers';
+@import './mixins/titles';
+@import './mixins/paragraphs';
+@import './mixins/buttons';
+@import './mixins/radio';
+@import './mixins/forms';
+@import './mixins/scrollbar';
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'RF Dewi', sans-serif;
+}
+
+h1 {
+    @include h1;
+}
+
+h2 {
+    @include h2;
+}
+
+h3 {
+    @include h3;
+}
+
+h4 {
+    @include h4;
+}
+
+.text16 {
+    @include textDefault;
+}
+
+.text12 {
+    @include textSmall;
+}
+
+button {
+    @include defaultButton;
+}
+
+input {
+    //@include input;
+}

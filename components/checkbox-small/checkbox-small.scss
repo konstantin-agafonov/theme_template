@@ -1,0 +1,87 @@
+@import '../../assets/css/utils/main-mixin';
+
+.bi-checkbox-small {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.625rem;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+
+    &__label {
+        @include textDefault;
+        font-family: 'Norms', serif;
+
+        &--light-grey {
+            color: $grey;
+        }
+
+        &--pale-grey {
+            color: $grey;
+        }
+
+        &--grey {
+            color: $grey;
+        }
+
+        &--white {
+            color: $white;
+        }
+    }
+}
+
+.bi-checkbox-small__switch {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 0.875rem;
+    height: 0.875rem;
+    border-radius: 3px;
+    vertical-align: top;
+    background: $grey;
+    transition: 0.2s;
+}
+
+.bi-checkbox-small input[type='checkbox'] {
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+/* Checked */
+
+.bi-checkbox-small input[type='checkbox']:checked + .bi-checkbox-small__switch {
+    background: $green;
+}
+
+.bi-checkbox-small input[type='checkbox']:checked ~ .bi-checkbox-small__label {
+    &--checked-pale-grey {
+        color: $grey;
+    }
+
+    &--checked-grey {
+        color: $grey;
+    }
+
+    &--checked-white {
+        color: $white;
+    }
+}
+
+/* Disabled */
+
+.bi-checkbox-small
+    input[type='checkbox']:disabled
+    + .bi-checkbox-small__switch {
+    filter: grayscale(70%);
+}
+
+/* Focus */
+
+.bi-checkbox-small.focused .bi-checkbox-small__switch {
+    box-shadow: inset 0 0 4px #ff5623;
+}

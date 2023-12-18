@@ -1,0 +1,19 @@
+.editor-styles-wrapper {
+    .projects-list {
+        &__item {
+            padding-left: 0 !important;
+        }
+    }
+
+    .project-card {
+        &__image {
+            left: 0 !important;
+            position: relative !important;
+        }
+    }
+}
+
+#secondary_title {
+    width: 100%;
+    margin-top: 5px;
+}

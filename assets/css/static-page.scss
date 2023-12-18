@@ -1,0 +1,64 @@
+@import 'utils/fonts';
+@import 'utils/main-mixin';
+
+.bi-page-container {
+    margin-top: calc(5.625rem + 5.625rem);
+
+    @include resMobile {
+        margin-top: calc(5.625rem + 1.875rem);
+    }
+
+    article.page {
+        display: flex;
+        flex-direction: column;
+        gap: 3.75rem;
+
+        @include resMobile {
+            gap: 1.875rem;
+        }
+
+        header {
+            h1.entry-title {
+                @include resMobile {
+                    font-size: 1.875rem;
+                    line-height: 1.13;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        & .entry-content {
+            color: $grey;
+            @include textDefault;
+        }
+
+        ol {
+            counter-reset: section; /* Создаёт новый счётчик для каждого тега <ol> */
+            list-style-type: none;
+        }
+
+        ul {
+            list-style: disc;
+        }
+
+        ol > li::before {
+            counter-increment: section; /* Инкрементируется только счётчик текущего уровня вложенности */
+            content: counters(section, ".") ". "; /* Добавляем значения всех уровней вложенности, используя разделитель '.' */
+            /* Если необходима поддержка < IE8, необходимо убедиться, что после разделителя ('.') не стоит пробел */
+        }
+
+        ol > li, ul > li {
+            margin-top: 1rem;
+            line-height: 1.5;
+        }
+
+        li > ol > li, li > ul > li {
+            margin-top: 0;
+            margin-left: 1rem;
+        }
+
+        li > ul {
+            margin-left: 1rem;
+        }
+    }
+}

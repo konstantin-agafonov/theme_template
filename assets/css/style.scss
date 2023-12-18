@@ -1,0 +1,72 @@
+//utils
+@import 'utils/fonts';
+@import 'utils/main-mixin';
+
+@import './static-page';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1.111111111111111vw;
+    position: relative;
+
+    @include resMobile {
+        font-size: 4.444444444444444vw;
+    }
+}
+
+body {
+    @include textDefault;
+    color: $black;
+    @include mainWrapper;
+    font-family: 'Norms', sans-serif;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+}
+
+a {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: $transitionFirst;
+    position: relative;
+    display: flex;
+    width: max-content;
+    gap: 0.625rem;
+    align-items: center;
+
+    > svg {
+        path {
+            transition: $transitionFirst;
+            fill: $black;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: -0.5rem;
+    }
+
+    &:hover {
+        color: $green;
+
+        > svg {
+            path {
+                fill: $green;
+            }
+        }
+    }
+}
+
+ul {
+    list-style-type: none;
+}

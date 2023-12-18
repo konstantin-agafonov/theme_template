@@ -1,0 +1,78 @@
+{
+    "name": "bi",
+    "version": "1.0.0",
+    "description": "",
+    "main": "assets/js/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "NODE_ENV=production webpack --config assets/js/config/webpack.prod.js",
+        "start": "NODE_ENV=development webpack --config assets/js/config/webpack.dev.js --watch",
+        "watch": "webpack --config assets/js/config/webpack.dev.js --watch",
+        "open": "webpack serve --config assets/js/config/webpack.dev.js --open",
+        "dev": "webpack --config assets/js/config/webpack.dev.js",
+        "lint": "eslint --fix --ext .js,.jsx .",
+        "lintScss": "stylelint --fix '**/*.scss'"
+    },
+    "author": "bi",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.16.0",
+        "@babel/preset-env": "^7.16.0",
+        "babel-loader": "^8.2.3",
+        "clean-webpack-plugin": "^4.0.0",
+        "copy-webpack-plugin": "^11.0.0",
+        "css-loader": "^6.5.1",
+        "cssnano": "^5.0.12",
+        "eslint": "^8.46.0",
+        "eslint-config-airbnb": "^19.0.4",
+        "eslint-plugin-import": "^2.28.0",
+        "eslint-plugin-jsx-a11y": "^6.7.1",
+        "eslint-plugin-react": "^7.33.1",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-webpack-plugin": "^4.0.1",
+        "file-loader": "^6.2.0",
+        "mini-css-extract-plugin": "^2.4.4",
+        "postcss": "^8.4.4",
+        "postcss-loader": "^6.2.1",
+        "postcss-preset-env": "^7.0.1",
+        "sass": "^1.43.4",
+        "sass-loader": "^12.3.0",
+        "style-loader": "^3.3.1",
+        "stylelint": "^15.10.2",
+        "stylelint-config-sass-guidelines": "^10.0.0",
+        "stylelint-config-standard": "^34.0.0",
+        "stylelint-prettier": "^4.0.2",
+        "stylelint-webpack-plugin": "^4.1.1",
+        "webpack": "^5.64.0",
+        "webpack-cli": "^4.9.1",
+        "webpack-dev-server": "^4.4.0",
+        "webpack-merge": "^5.8.0",
+        "webpack-shell-plugin": "^0.5.0"
+    },
+    "engines": {
+        "node": ">=17.1.0"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "dependencies": {
+        "@barba/core": "^2.9.7",
+        "@mcaskill/sass-mq": "^5.0.1",
+        "@splidejs/splide": "^4.1.4",
+        "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+        "dotenv": "^16.0.1",
+        "gsap": "^3.11.5",
+        "moment": "^2.29.4",
+        "prettier": "^3.0.1",
+        "stylelint-declaration-block-no-ignored-properties": "^2.7.0"
+    }
+}

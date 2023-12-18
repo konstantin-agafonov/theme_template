@@ -1,0 +1,19 @@
+{
+    "name" : "bi/block-template",
+    "title" : "block template",
+    "icon": "admin-site",
+    "description": "Introduce new sections and organize content to help visitors",
+
+    "apiVersion": 3,
+    "textdomain": "bi",
+    "supports": {
+        "align" : false, 
+        "mode"  : false,
+        "jsx"   : true,
+        "anchor": true
+    },
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "./template.php"
+    }
+}

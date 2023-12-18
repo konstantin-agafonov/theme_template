@@ -1,0 +1,62 @@
+@mixin radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    
+    &--disable {
+        opacity: 0.3;
+        pointer-events: none;
+    }
+    &__radio {
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        opacity: 0;
+        width: 1px;
+        height: 1px;
+        max-width: 1px;
+        min-width: 1px;
+    }
+
+    &__radio-custom {
+        padding: .625rem;
+        border-radius: .625rem;
+        background: transparent;
+        backdrop-filter: blur(15px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            background-color: $grey;
+        }
+
+        @include resMobile {
+            padding: .5rem;
+            border-radius: .5rem;
+            @include textSmall;
+        }
+    }
+
+    &__radio:checked ~ .radio__radio-custom {
+        background-color: $grey;
+    }
+}
+
+@mixin colorRadio {
+    @include radio;
+
+    &__radio-custom {
+        padding: 0.9375rem;
+        background-color: $white;
+        border-radius: 1px solid $grey;
+    }
+
+    &__radio:checked ~ .radio__radio-custom {
+        border: 1px solid $black;
+    }
+}
